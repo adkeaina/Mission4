@@ -33,8 +33,18 @@ do
         // 
         Console.Write($"Player {player} pick where you want to go (1-9):");
         string input = Console.ReadLine();
-
+        // check for letters, etc.
+        if (!input.All(char.IsDigit))
+        {
+            Console.WriteLine("Invalid input. Try again.");
+            continue;
+        }
         int play = int.Parse(input);
+        if (play <= 0 || play > 9)
+        {
+            Console.WriteLine("Invalid spot. Try again.");
+            continue;
+        }
 
         row = (play - 1) / 3;
         col = (play - 1) % 3;
