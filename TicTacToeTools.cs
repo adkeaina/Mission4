@@ -73,7 +73,7 @@ public class TicTacToeTools
             else if (board[1,1] == 'O') return 2;
         }
         
-        // if ain't no winners yet
+        // to check the game isn't over yet
         foreach (char c in board)
         {
             if (char.IsDigit(c))
