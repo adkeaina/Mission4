@@ -5,12 +5,11 @@ using Mission4;
 
 TicTacToeTools t4 = new TicTacToeTools();
 
-// Initializing gameboard
-char[,] GameBoard = new char[3, 3];
 
 // Introduction and instantiating supporting tools
 Console.WriteLine("Welcome to Tic Tac Toe.");
 
+// initialize gameboard
 char[,] gameBoard =
 {
     {'1', '2', '3'},
@@ -18,12 +17,16 @@ char[,] gameBoard =
     {'7', '8', '9'},
 };
 
+// initialize gameboard
 int player = 1;
 int row;
 int col;
+bool endgame = true;
 
-while (true)
+// while endgame is true, the game plays
+while (endgame)
 {
+    t4.PrintBoard(gameBoard);
 
     Console.Write($"Player {player} pick where you want to go (1-9):");
     string input = Console.ReadLine();
@@ -32,11 +35,11 @@ while (true)
 
     row = (play - 1) / 3;
     col = (play - 1) % 3;
-
     // Check if the chosen spot is already taken
     if (gameBoard[row, col] == 'X' || gameBoard[row, col] == 'O')
     {
         Console.WriteLine("Spot already taken. Choose another one.");
+        continue;
     }
 
     if (player == 1)
@@ -56,6 +59,24 @@ while (true)
     {
         player = 1;
     }
+    int winner = t4.IsWinner(gameBoard);
+    if (winner == 1)
+    {
+        Console.WriteLine("Player 1 won!");
+        endgame = false;
+    }
+    else if (winner == 2)
+    {
+        Console.WriteLine("Player 2 won!");
+        endgame = false;
+    }
+    else if (winner == -1)
+    {
+        Console.WriteLine("CATS GAME!");
+        endgame = false;
+    }
+    else { continue; }
+    
 }
 // print board method
-t4.PrintBoard(GameBoard);
+t4.PrintBoard(gameBoard);
