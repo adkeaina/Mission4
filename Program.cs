@@ -88,7 +88,6 @@ do
             Console.WriteLine("CATS GAME!");
             endgame = false;
         }
-        else { continue; }
 
     }
 
@@ -104,11 +103,11 @@ do
 
         // initialize gameboard
         gameBoard = new char[,]
-    {
-        {'1', '2', '3'},
-        {'4', '5', '6'},
-        {'7', '8', '9'},
-    };
+        {
+            {'1', '2', '3'},
+            {'4', '5', '6'},
+            {'7', '8', '9'},
+        };
 
         // initialize gameboard
         player = 1;

@@ -3,14 +3,17 @@ namespace Mission4;
 public class TicTacToeTools
 {
 
+    // prints the tic-tac-toe board
     public void PrintBoard(char[,] board)
     {
+        //prints each row
         for (int row = 0; row < board.GetLength(0); row++)
         {
             if (row != 0)
             {
                 Console.WriteLine("------------");
             }
+            // prints each value
             for (int col = 0; col < board.GetLength(1); col++)
             {
                 if (col != 0)
@@ -21,8 +24,7 @@ public class TicTacToeTools
                 {
                     Console.Write(" ");
                 }
-
-                if (board[row, col] == '\0')
+                if (board[row, col] == '\0') // in case something goes wrong and the board ends up as blank
                 {
                     Console.Write(" ");
                 }
