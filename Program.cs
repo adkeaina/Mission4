@@ -89,12 +89,30 @@ do
     {
         playagain = false;
     }
+    else if (response == "yes")
+    {
+
+        // initialize gameboard
+        gameBoard = new char[,]
+    {
+        {'1', '2', '3'},
+        {'4', '5', '6'},
+        {'7', '8', '9'},
+    };
+
+        // initialize gameboard
+        player = 1;
+        row = 0 ;
+        col = 0 ;
+        endgame = true;
+        playagain = true;
+        response = "";
+
+    }
     else
     {
-        playagain = true;
+        Console.WriteLine("Please enter a valid response (Yes/No)");
     }
-
+    
 } while (playagain);
     
-// print board method
-t4.PrintBoard(gameBoard);
