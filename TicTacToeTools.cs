@@ -67,6 +67,13 @@ public class TicTacToeTools
         }
         
         // check diagonals for winner
+        if ((board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2]) || (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0]))
+        {
+            if (board[1,1] == 'X') return 1;
+            else if (board[1,1] == 'O') return 2;
+        }
+        
+        // if ain't no winners
         return 0;
     }
 }
